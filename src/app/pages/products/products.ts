@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Product } from '../../services/products';
+import { Products } from '../../services/products';
 
 @Component({
   selector: 'app-products',
@@ -6,6 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './products.html',
   styleUrl: './products.css'
 })
-export class Products {
+export class ProductosClass {
+  productos : Product[] = []
+  constructor(private product:Products){
+    this.productos = this.product.getProducts();
 
+  }
 }
